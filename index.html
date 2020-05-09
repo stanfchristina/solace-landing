@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:700,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="jquery.fullPage.css">
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="icon" type="image/png" href="imgs/leaf.png">
+  <script type="text/javascript" src="jquery.fullPage.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var sections = ['home', 'about', 'features', 'team'];
+      $("#fullpage").fullpage({
+        sectionsColor: ['#fff', '#dec868', '#fff', '#dec868'],
+        anchors: ['home', 'about', 'features', 'team'],
+        menu: "#menu",
+        slidesNavigation: true,
+        scrollingSpeed: 1000,
+        onLeave: function(index, nextIndex, direction) {
+          $("li[data-menuanchor=\'" + sections[index - 1] + "\'] a").css('color', '#999');
+          $("li[data-menuanchor=\'" + sections[nextIndex - 1] + "\'] a").css('color', '#dec868');
+        }
+      });
+    });
+  </script>
+  <title>Solace</title>
+</head>
+<body>
+  <!-- Top navigation bar. -->
+  <ul id="menu">
+    <li data-menuanchor="home" id="logo"><a href="#home">Solace</a></li>
+    <li data-menuanchor="about"><a href="#about">About</a></li>
+    <li data-menuanchor="features"><a href="#features">Features</a></li>
+    <li data-menuanchor="team"><a href="#team">Team</a></li>
+    <li class="logo"><a href="#home"><img src="imgs/leaf.png"></a></li>
+  </ul>
+
+  <div id="fullpage">
+    <!-- Panel for introducing application and purpose. -->
+    <div class="section" id="titlesection">
+      <div class="intro">
+        <h1><span>Solace</span></h1>
+        <h2>An app to stay safe and keep connected.</h2>
+      </div>
+    </div>
+
+    <!-- Panel for describing the problem space and solution. -->
+    <div class="section" id="aboutsection">
+      <div class="intro">
+        <h2>The Problem</h2>
+        <p>COVID-19 and the resulting stay-at-home orders have caused reports of domestic violence to rise globally, and have made seeking help much more difficult. Existing applications that claim to mitigate domestic violence are lacking in utility and are executed in a manner that is neither functional nor accessible to victims.</p>
+        <h2>Our Solution</h2>
+        <p>Solace is a free information technology iOS app that assists those experiencing abuse by securely connecting them to resources and their support network. It is a safe platform aiming to provide domestic violence victims with the right information and tools to seek safety during a misinformation and health crisis.</p>
+      </div>
+    </div>
+
+    <!-- Panel for outlining key features of the solution, including supporting images. -->
+    <div class="section" id="featuresection">
+      <div class="slide">
+        <div class="intro">
+          <img src="imgs/chat.png" class="featureimg">
+          <div class="right">
+            <h2>Private, Secure Messaging</h2>
+            <p>Safely and securely send private messages to trusted contacts. All communications stay in-app and are untraceable outside of the app.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="intro">
+          <img src="imgs/shelters.png" class="featureimg">
+          <div class="right">
+            <h2>Find Help</h2>
+            <p>Find resources near your location that can provide support and help you create a safety plan.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="intro">
+          <img src="imgs/settings.png" class="featureimg">
+          <div class="right">
+            <h2>Discreet Functionality</h2>
+            <p>With all your resources in a single place, quick exit and safe screen features allow you to easily cloak your communications and deter unwelcome users.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="intro">
+          <img src="imgs/home.png" class="featureimg">
+          <div class="right">
+            <h2>Get Solace</h2>
+            <p>Coming soon to the iOS App Store late May for iPhone.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel for team and iSchool information. -->
+    <div class="section" id="teamsection">
+      <div class="intro">
+        <h2>Our Team</h2>
+        <p>This project was created in cooperation with the University of Washington's Information School 2020 <a href="https://ischool.uw.edu/capstone">Capstone course</a>. Please feel free to reach out to us with any questions or thoughts you have!</p>
+          <ul>
+            <li>
+              <div class="imgcircle">
+                <img src="imgs/salem.jpg">
+              </div>
+              <h4>Salem Gordon</h4>
+              <p>salemg@uw.edu</p>
+              <p><i>Designer</i></p>
+            </li>
+            <li>
+              <div class="imgcircle">
+                <img src="imgs/jennifer.jpg">
+              </div>
+              <h4>Jennifer Li</h4>
+              <p>lcy99@uw.edu</p>
+              <p><i>Designer</i></p>
+            </li>
+            <li>
+              <div class="imgcircle">
+                <img src="imgs/jarod.jpg">
+              </div>
+              <h4>Jarod Wong</h4>
+              <p>jarodw@uw.edu</p>
+              <p><i>Project Manager</i></p>
+            </li>
+            <li>
+              <div class="imgcircle">
+                <img src="imgs/jon.jpg">
+              </div>
+              <h4>Jonathan Cady</h4>
+              <p>joncady@uw.edu</p>
+              <p><i>Developer</i></p>
+            </li>
+            <li>
+              <div class="imgcircle">
+                <img src="imgs/christina.jpg">
+              </div>
+              <h4>Christina Stanfield</h4>
+              <p>cstanf@uw.edu</p>
+              <p><i>Developer</i></p>
+            </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

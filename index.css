@@ -147,6 +147,7 @@ h4 {
 }
 
 #teamsection li p {
+  width: 100px;
   font-size: 0.8em;
 }
 

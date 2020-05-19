@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:700,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="jquery.fullPage.css">
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="icon" type="image/png" href="imgs/solace-logo.png">
+  <script type="text/javascript" src="jquery.fullPage.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var sections = ['home', 'about', 'features', 'team'];
+      $("#fullpage").fullpage({
+        sectionsColor: ['#fff', '#dec868', '#fff', '#dec868'],
+        anchors: ['home', 'about', 'features', 'team'],
+        menu: "#menu",
+        slidesNavigation: true,
+        scrollingSpeed: 1000,
+        onLeave: function(index, nextIndex, direction) {
+          $("li[data-menuanchor=\'" + sections[index - 1] + "\'] a").css('color', '#999');
+          $("li[data-menuanchor=\'" + sections[nextIndex - 1] + "\'] a").css('color', '#dec868');
+        }
+      });
+    });
+  </script>
+  <title>Solace</title>
+</head>
+<body>
+  <!-- Top navigation bar. -->
+  <ul id="menu">
+    <li data-menuanchor="home" id="logo"><a href="index.html">Solace</a></li>
+    <li data-menuanchor="about"><a href="index.html#about">About</a></li>
+    <li data-menuanchor="features"><a href="index.html#features">Features</a></li>
+    <li data-menuanchor="team"><a href="index.html#team">Team</a></li>
+
+    <!-- Links to Pages on Site -->
+    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+    <li><a href="support.html">Support</a></li>
+    <li class="logo"><a href="index.html"><img src="imgs/leaf.png"></a></li>
+  </ul>
+
+  <div id="fullpage">
+    <!-- Panel for introducing application and purpose. -->
+    <div class="section">
+      <di class="intro">
+        <h1>Privacy Policy</h1>
+        <p class="text-left">Solace is an application intended to help users find comfort and safety in any situation. Your data, privacy, and security is very important to us.</p>
+        <p class="text-left">In order to use Solace, you will have to provide your location, phone number, name, and allow permission for the app to access your camera, notifications, and photo library.</p>
+        <p class="text-left">All such information collected is entirely private to the user. No data is stored online, and Solace cannot view your data. Once you delete the app, your data is wiped clean from the device.</p>
+        <p class="text-left">Solace uses encryption to keep your data safe. You must enter the correct password to access the application.</p>
+      </div>
+    </div>
+    
+
+</body>
+</html>
